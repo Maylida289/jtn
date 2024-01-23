@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"jtn/config"
 
-	// "gorm.io/gorm"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
@@ -26,4 +25,8 @@ func Init() {
 	if err != nil {
 		panic("DSN Error")
 	}
+}
+
+func DBManager() *gorm.DB {
+	return db
 }
