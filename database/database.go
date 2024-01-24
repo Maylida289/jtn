@@ -3,6 +3,7 @@ package database
 import (
 	"fmt"
 	"jtn/config"
+	"jtn/model"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
@@ -25,6 +26,8 @@ func Init() {
 	if err != nil {
 		panic("DSN Error")
 	}
+
+	db.AutoMigrate(&model.No_handphone{})
 }
 
 func DBManager() *gorm.DB {
