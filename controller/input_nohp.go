@@ -34,7 +34,7 @@ func GetData(c echo.Context) (err error) { //menampilkan seluruh data user
 }
 
 func CreateData(c echo.Context) (err error) { //menambahkan data konsumen
-	var req model.No_handphone
+	req := new(model.No_handphone)
 	if err = c.Bind(req); err != nil {
 		return c.JSON(http.StatusBadRequest, nil)
 	}
